@@ -14,7 +14,7 @@ class Blog(models.Model):
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=180)
     slug = models.SlugField(unique=True)
     content = RichTextUploadingField()
     featured_image = models.ImageField(upload_to ='uploads/',blank=True,null=True)
