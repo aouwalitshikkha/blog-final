@@ -14,14 +14,14 @@ class Blog(models.Model):
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=180)
+    title = models.CharField(max_length=280)
     slug = models.SlugField(unique=True)
     content = RichTextUploadingField()
     featured_image = models.ImageField(upload_to ='uploads/',blank=True,null=True)
     tags = TaggableManager(blank=True,)
     featured = models.BooleanField(default=False)
     pub_date = models.DateTimeField(auto_now=True)
-    mod_date = models.DateTimeField(auto_now_add=True)
+    mod_date = models.DateTimeField(auto_now_add=False)
 
     meta_title = models.CharField(max_length=200, null=True, blank=True)
     meta_description = models.CharField(max_length=300, null=True, blank=True)
